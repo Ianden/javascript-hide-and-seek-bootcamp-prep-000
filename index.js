@@ -15,3 +15,21 @@ function increaseRankBy(n) {
   }
 }
 
+function deepestChild(cond) {
+  var current = document.querySelector('div#grand-node')
+  while (current) {
+    if cond(current) {
+      return current
+    } else {
+      current = current.children[0]
+    }
+  }
+}
+
+function cond(child) {
+  if (child.children.length == 0) {
+    return true
+  } else {
+    return false
+  }
+}
